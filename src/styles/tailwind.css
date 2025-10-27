@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Background Colors */
+    --color-background: #fefefe; /* white */
+    --color-foreground: #1f2937; /* gray-800 */
+    --color-surface: #f8fafc; /* slate-50 */
+    --color-card: #ffffff; /* white */
+    --color-card-foreground: #1f2937; /* gray-800 */
+    --color-popover: #ffffff; /* white */
+    --color-popover-foreground: #1f2937; /* gray-800 */
+    
+    /* Border & Input Colors */
+    --color-border: #e5e7eb; /* gray-200 */
+    --color-input: #ffffff; /* white */
+    --color-ring: #1e3a8a; /* blue-800 */
+    
+    /* Muted Colors */
+    --color-muted: #f1f5f9; /* slate-100 */
+    --color-muted-foreground: #6b7280; /* gray-500 */
+    
+    /* Primary Colors */
+    --color-primary: #1e3a8a; /* blue-800 */
+    --color-primary-foreground: #ffffff; /* white */
+    
+    /* Secondary Colors */
+    --color-secondary: #f97316; /* orange-500 */
+    --color-secondary-foreground: #ffffff; /* white */
+    
+    /* Accent Colors */
+    --color-accent: #16a34a; /* green-600 */
+    --color-accent-foreground: #ffffff; /* white */
+    
+    /* State Colors */
+    --color-success: #059669; /* emerald-600 */
+    --color-success-foreground: #ffffff; /* white */
+    
+    --color-warning: #d97706; /* amber-600 */
+    --color-warning-foreground: #ffffff; /* white */
+    
+    --color-error: #dc2626; /* red-600 */
+    --color-error-foreground: #ffffff; /* white */
+    
+    --color-destructive: #dc2626; /* red-600 */
+    --color-destructive-foreground: #ffffff; /* white */
+    
+    /* Text Colors */
+    --color-text-primary: #1f2937; /* gray-800 */
+    --color-text-secondary: #6b7280; /* gray-500 */
+    --color-text-slate: #64748b; /* slate-500 */
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(30, 58, 138, 0.08);
+    --shadow-md: 0 4px 12px rgba(30, 58, 138, 0.1);
+    --shadow-lg: 0 10px 25px rgba(30, 58, 138, 0.15);
+    
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+  }
+
+  *, *::before, *::after {
+    border-color: var(--color-border);
+  }
+
+  body {
+    /* Use CSS variables instead of Tailwind utilities to avoid @apply resolution issues */
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  }
+}
+
+@layer components {
+  .civic-card {
+    background-color: var(--color-card);
+    color: var(--color-card-foreground);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+  }
+.civic-button-primary  {
+    background-color: var(--color-primary);
+    color: var(--color-primary-foreground);
+    transition: background-color 200ms ease, color 200ms ease;
+  }
+.civic-button-secondary  {
+    background-color: var(--color-secondary);
+    color: var(--color-secondary-foreground);
+    transition: background-color 200ms ease, color 200ms ease;
+  }
+  
+  .civic-shadow-elevation {
+    box-shadow: var(--shadow-md);
+  }
+  
+  .civic-shadow-modal {
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .civic-transition {
+    background-color: var(--color-card);
+    color: var(--color-card-foreground);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+  }
+  .civic-button-primary {
+    background-color: var(--color-primary);
+    color: var(--color-primary-foreground);
+    transition: background-color 0.2s, color 0.2s;
+  }
+  .civic-button-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-secondary-foreground);
+    transition: background-color 0.2s, color 0.2s;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animation-fade-in {
+    animation: fadeIn 0.4s ease-out;
+  }
+  
+  .animation-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+  
+  .animation-scale-in {
+    animation: scaleIn 0.2s ease-out;
+  }
+
+  /* Fallback utilities for custom design tokens used across the app. These ensure
+     classes like `border-border` and `border-border/50` exist even if Tailwind's
+     runtime doesn't generate them in some environments. */
+  .border-border {
+    border-color: var(--color-border) !important;
+  }
+  .border-border\/50 {
+    /* 50% opacity of #e5e7eb (var --color-border) */
+    border-color: rgba(229,231,235,0.5) !important;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
