@@ -1,21 +1,15 @@
-{
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+export default {
+  rewrites: [
+    { source: "/(.*)", destination: "/index.html" }
   ],
-  "routes": [
+  routes: [
     {
-      "src": "/[^.]+",
-      "dest": "/",
-      "status": 200
+      src: "/[^.]+",
+      dest: "/",
+      status: 200
     }
   ],
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
-    }
-  ]
+  build: {
+    outDir: "dist"
+  }
 }
