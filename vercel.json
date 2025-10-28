@@ -1,15 +1,15 @@
-{
-  "rewrites": [
+export default {
+  rewrites: [
     { "source": "/(.*)", "destination": "/index.html" }
   ],
-  "routes": [
+  routes: [
     {
       "src": "/[^.]+",
       "dest": "/",
       "status": 200
     }
   ],
-  "build": {
-    "outDir": "dist"
+  build: {
+    outDir: 'dist'
   }
 }
