@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="httpsYOUR_LOGO_OR_BANNER_URL_HERE" alt="Project Banner" width="600"/>
+   <img src="public/logo.png" alt="StayFinder Pro Showcase" width="300"/>
   <br/>
   <h1>Our Voice Our Rights</h1>
   <p>An anonymous, secure, and user-friendly reporting system designed to empower users and streamline administrative review.</p>
